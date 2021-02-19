@@ -1,0 +1,13 @@
+{
+  "request": {
+    "urlPath": "/orgs/devaway/members",
+    "queryParameters": {
+      "role": "member",
+      "filter":"all"
+    }
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "GET-non-admin-members.json"
+  }
+}

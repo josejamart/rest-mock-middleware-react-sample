@@ -1,0 +1,5 @@
+{
+    "id": "/schemas/phone-schema.json",
+    "type": "string",
+    "pattern": "^[0-9-]{9}$"
+  }

@@ -151,10 +151,10 @@ export default function Home() {
                         <ListItemIcon><Dashboard /></ListItemIcon>
                         <ListItemText primary="People" />
                     </ListItem>
-                    <ListItem button key="repositories" onClick={() => setComponent(Components.REPOSITORIES)}>
+                    {/* <ListItem button key="repositories" onClick={() => setComponent(Components.REPOSITORIES)}>
                         <ListItemIcon><Dashboard /></ListItemIcon>
                         <ListItemText primary="Repositories" />
-                    </ListItem>
+                    </ListItem> */}
                     <ListItem button key="issues" onClick={() => setComponent(Components.ISSUES)}>
                         <ListItemIcon><Dashboard /></ListItemIcon>
                         <ListItemText primary="Registry" />

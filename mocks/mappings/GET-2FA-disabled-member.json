@@ -1,0 +1,9 @@
+{
+  "request": {
+    "urlPattern": "/api/orgs/devaway/members\\?role=(.)*&filter=2fa_disabled"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "GET-2FA-disabled-member.json"
+  }
+}
