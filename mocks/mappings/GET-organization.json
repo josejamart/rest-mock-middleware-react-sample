@@ -1,0 +1,9 @@
+{
+    "request":{
+        "urlPath":"/orgs/devaway"
+    },
+    "response":{
+        "status": 200,
+        "bodyFileName": "GET-organization.json"
+    }
+}

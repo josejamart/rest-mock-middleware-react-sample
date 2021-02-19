@@ -1,0 +1,17 @@
+{
+    "request":{
+        "urlPath":"/repos/devaway/users",
+        "method": "POST",
+        "bodyPatterns": {
+            "matchesSchema": {
+              "schemaFile": "user-schema.json"
+            }
+          }
+    },
+    "response":{
+        "status": 200,
+        "jsonBody": {
+          "result": "ok"
+        }
+    }
+}

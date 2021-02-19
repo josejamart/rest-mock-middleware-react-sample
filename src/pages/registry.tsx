@@ -1,6 +1,8 @@
-import { Button, createStyles, FormControl, Grid, makeStyles, TextField, Theme } from '@material-ui/core';
+import { Button, createStyles, FormControl, Grid, IconButton, makeStyles, TextField, Theme } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 import React from 'react';
 import { userRegistry } from '../api/github';
+import CloseIcon from '@material-ui/icons/Close';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -18,13 +20,17 @@ export const Registry = () => {
     const [company, setCompany] = React.useState('');
     const [phone, setPhone] = React.useState('');
 
-    const [error, setError] = React.useState<string>('');
+    const [error, setError] = React.useState<boolean>(false);
+    const [success, setSuccess] = React.useState<boolean>(false);
 
     const handleSubmit = async () => {
         try {
+            setError(false);
             await userRegistry(firstName, lastName, email, company, phone);
+            setSuccess(true);
+            setTimeout(() => { setSuccess(false) }, 5000)
         } catch {
-            setError("Error")
+            setError(true)
         }
     };
 
@@ -72,10 +78,24 @@ export const Registry = () => {
                 </FormControl>
             </Grid>
 
-            <Button variant="contained" color="primary" onClick={() => { handleSubmit() }}>
+            <Button variant="contained" color="primary" onClick={async () => { handleSubmit() }}>
                 Send
         </Button>
         </Grid>
-        <div>{error}</div>
+        {error && <Alert severity="error">The user can't be save!</Alert>}
+        {success && <Alert
+            action={
+                <IconButton
+                    aria-label="close"
+                    color="inherit"
+                    size="small"
+                    onClick={() => { setSuccess(false) }}
+                >
+                    <CloseIcon fontSize="inherit" />
+                </IconButton>
+            }
+        >
+            User save correctly!
+      </Alert>}
     </form>;
 };

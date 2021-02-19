@@ -1,0 +1,9 @@
+{
+    "request":{
+        "url":"/api/orgs/devaway/members?role=all&filter=all"
+    },
+    "response":{
+        "status": 200,
+        "bodyFileName": "GET-all-members.json"
+    }
+}
